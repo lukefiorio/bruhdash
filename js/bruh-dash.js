@@ -51,13 +51,13 @@ global.bruhdash = {
   // creates a slice of an array from the start index up to but not including the end index
   slice: function (arr,i,j) {
     return arr.slice(i,j)
-
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop: function(){
-
+  drop: function(arr,i=1){
+    return arr.splice(i,arr.length);
   },
+
 
   // returns a slice of array with n elements dropped from the end
   dropRight: function() {
