@@ -10,23 +10,25 @@ var global = window || GLOBAL;
 global.bruhdash = {
 
   // returns the first element of an array
-  first: function () {
-      
+  first: function (arr) {
+      var itemOne = arr.shift();
+      return itemOne;
   },
 
   // returns the last element of an array
-  last: function () {
-
+  last: function (arr) {
+    var itemN = arr.pop();
+    return itemN;
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
-
+  indexOf: function (arr,n) {
+    return arr.indexOf(n);
   },
 
   // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
-
+  lastIndexOf: function (arr,n) {
+    return arr.lastIndexOf(n);
   },
 
   // returns an array with all elements except for the last element
