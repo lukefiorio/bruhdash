@@ -49,7 +49,8 @@ global.bruhdash = {
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function () {
+  slice: function (arr,i,j) {
+    return arr.slice(i,j)
 
   },
 
