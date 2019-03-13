@@ -87,13 +87,12 @@ global.bruhdash = {
 
   // removes all given values from an array
   pull: function (arr,...vals) {
-    var subArr = [];
-    for (var i=0;i<arr.length;i++) {
-      if (vals.indexOf(arr[i])===-1) {
-        subArr.push(arr[i]);
+    for (var i=arr.length-1;i>=0;i--) {
+      if (vals.indexOf(arr[i])!==-1) {
+        arr.splice(i,1);
       }
     }
-    return subArr;
+    return arr;
   },
 
   // removes elements of an array corresponding to the given indices
@@ -106,12 +105,25 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(arr,...vals) {
+    var subArr = [];
+    for (var i=0;i<arr.length;i++) {
+      if (vals.indexOf(arr[i])===-1) {
+        subArr.push(arr[i]);
+      }
+    }
+    return subArr;
   },
 
   // returns an array with specified values excluded
-  difference: function() {
+  difference: function(arr, valArr) {
+    var subArr = [];
+    for (var i=0;i<arr.length;i++) {
+      if (valArr.indexOf(arr[i])===-1) {
+        subArr.push(arr[i]);
+      }
+    }
+    return subArr;
 
   },
 
