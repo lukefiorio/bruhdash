@@ -60,8 +60,8 @@ global.bruhdash = {
 
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
-
+  dropRight: function(arr, i=1) {
+    return arr.slice(0,arr.length-i);
   },
 
   // creates a slice of an array with n elements taken from the beginning
