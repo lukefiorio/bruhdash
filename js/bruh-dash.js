@@ -86,8 +86,14 @@ global.bruhdash = {
   },
 
   // removes all given values from an array
-  pull: function () {
-
+  pull: function (arr,...vals) {
+    var subArr = [];
+    for (var i=0;i<arr.length;i++) {
+      if (vals.indexOf(arr[i])===-1) {
+        subArr.push(arr[i]);
+      }
+    }
+    return subArr;
   },
 
   // removes elements of an array corresponding to the given indices
