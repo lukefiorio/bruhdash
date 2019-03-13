@@ -65,8 +65,9 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
-
+  take: function (arr,i=1) {
+    startArr = arr.slice(0,i);
+    return startArr;
   },
 
   // creates a slice of an array with n elements taken from the end
