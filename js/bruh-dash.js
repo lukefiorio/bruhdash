@@ -149,13 +149,37 @@ global.bruhdash = {
   },
 
   // creates an array of grouped elements in their pre-zip configuration
-  unzip: function () {
-
+  unzip: function (arr) {
+    var unzipArr1 = [];
+    var unzipArr2 = [];
+    for (var i=0;i<arr.length;i++) {
+      unzipArr1.push(arr[i][0]);
+      unzipArr2.push(arr[i][1]);
+    }
+    var unzipArr = [,];
+    unzipArr[0]=unzipArr1;
+    unzipArr[1]=unzipArr2;
+    return unzipArr;
   },
 
   // creates an array of elements into groups of length of specified size
-  chunk: function(){
-
+  chunk: function(arr,size){
+    var chunkArr = [];
+    if (arr===undefined || arr.length===0 || size===0) {
+      // do nothing
+    } else if (arr.length<=size) {
+      chunkArr.push(arr);
+    } else {
+      for (var i=0;i<=Math.trunc(arr.length/size);i++) {
+        chunkArr.push([]);
+        for (var j=0;j<size;j++) {
+          if (arr.length>(size*i+j)) {
+            chunkArr[i].push(arr[size*i+j])
+          }
+        }
+      }
+    }
+    return chunkArr;
   },
 
   // iterates over elements of a collection and invokes iteratee for each element
