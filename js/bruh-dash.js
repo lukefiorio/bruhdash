@@ -132,8 +132,20 @@ global.bruhdash = {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
-
+  zip: function (arr1, arr2) {
+    maxLen = Math.max(arr1.length,arr2.length);
+    var zipArr = [];
+    for (var i=0;i<maxLen;i++) {
+      var tupleArr = ['',''];
+      if (arr1.length>i) {
+        tupleArr[0]=arr1[i];
+      }
+      if (arr2.length>i) {
+        tupleArr[1]=arr2[i];
+      } 
+      zipArr.push(tupleArr);
+    }
+    return zipArr
   },
 
   // creates an array of grouped elements in their pre-zip configuration
